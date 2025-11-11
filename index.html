@@ -48,7 +48,7 @@
       height: auto;
       margin-top: 30px;
       margin-bottom: 30px;
-      border-radius: 0; /* no circular edges */
+      border-radius: 0;
     }
 
     @media (max-width: 600px) {
@@ -97,6 +97,7 @@
       color: #555;
       margin-top: 0px;
       margin-bottom: 30px;
+      word-break: break-word;
     }
     @media (max-width: 600px) {
       .caption {
@@ -122,19 +123,71 @@
   <!-- About text -->
   <p id="text-content">Loading...</p>
 
-  <h2 class="section-title" data-key="products-title">Projects</h2>
-  
-  <img src="assets/images/Inastool_v002.jpg" alt="Gallery image 1" class="gallery-image">
-  <p class="caption" data-key="gallery1-caption">Ina stool</p>
-  
-  <img src="assets/images/IINOstool_v002.jpg" alt="Gallery image 2" class="gallery-image">
-  <p class="caption" data-key="gallery2-caption">IINO stool</p>
-  
-  <img src="assets/images/puukori_v1.jpg" alt="Gallery image 3" class="gallery-image">
-  <p class="caption" data-key="gallery3-caption">Bera firewood basket</p>
+  <h2 class="section-title" data-key="projects-title">Projects</h2>
+
+  <!-- Gallery images in the specified order -->
+  <img src="assets/images/E-bike_concept.jpg" alt="E-bike_concept" class="gallery-image">
+  <p class="caption">E-bike concept</p>
+
+  <img src="assets/images/grapes_lamp_concept.jpg" alt="grapes_lamp_concept" class="gallery-image">
+  <p class="caption">Grapes lamp concept</p>
+
+  <img src="assets/images/Lähde_1.jpg" alt="Lähde_1" class="gallery-image">
+  <p class="caption">Lähde 1</p>
+
+  <img src="assets/images/Lähde_2.jpg" alt="Lähde_2" class="gallery-image">
+  <p class="caption">Lähde 2</p>
+
+  <img src="assets/images/Lähde_3.jpg" alt="Lähde_3" class="gallery-image">
+  <p class="caption">Lähde 3</p>
+
+  <img src="assets/images/Lähde_sculpture.jpg" alt="Lähde_sculpture" class="gallery-image">
+  <p class="caption">Lähde sculpture</p>
+
+  <img src="assets/images/Linnanniemi_1.jpg" alt="Linnanniemi_1" class="gallery-image">
+  <p class="caption">Linnanniemi 1</p>
+
+  <img src="assets/images/Linnanniemi_2.jpg" alt="Linnanniemi_2" class="gallery-image">
+  <p class="caption">Linnanniemi 2</p>
+
+  <img src="assets/images/Linnanniemi_3.jpg" alt="Linnanniemi_3" class="gallery-image">
+  <p class="caption">Linnanniemi 3</p>
+
+  <img src="assets/images/ortho_mandala.jpg" alt="ortho_mandala" class="gallery-image">
+  <p class="caption">Ortho mandala</p>
+
+  <img src="assets/images/big_blossom.jpg" alt="big_blossom" class="gallery-image">
+  <p class="caption">Big blossom</p>
+
+  <img src="assets/images/small_blossom.jpg" alt="small_blossom" class="gallery-image">
+  <p class="caption">Small blossom</p>
+
+  <img src="assets/images/illusion_of_restriction_big.jpg" alt="illusion_of_restriction_big" class="gallery-image">
+  <p class="caption">Illusion of restriction big</p>
+
+  <img src="assets/images/pondering.jpg" alt="pondering" class="gallery-image">
+  <p class="caption">Pondering</p>
+
+  <img src="assets/images/illusion_of_restriction_small.jpg" alt="illusion_of_restriction_small" class="gallery-image">
+  <p class="caption">Illusion of restriction small</p>
+
+  <img src="assets/images/rect.jpg" alt="rect" class="gallery-image">
+  <p class="caption">Rect</p>
+
+  <img src="assets/images/think.jpg" alt="think" class="gallery-image">
+  <p class="caption">Think</p>
+
+  <!-- Original three products -->
+  <img src="assets/images/Inastool_v002.jpg" alt="Ina stool" class="gallery-image">
+  <p class="caption">Ina stool</p>
+
+  <img src="assets/images/IINOstool_v002.jpg" alt="IINO stool" class="gallery-image">
+  <p class="caption">IINO stool</p>
+
+  <img src="assets/images/puukori_v1.jpg" alt="Bera firewood basket" class="gallery-image">
+  <p class="caption">Bera firewood basket</p>
 
   
-
   <p class="contact-info">
     <span data-key="contact-line1">Contact me :)</span><br>
     <span data-key="contact-email">Email: iirokivisto@protonmail.com</span><br>
@@ -144,33 +197,11 @@
   <!-- Personal photo at the end before contact info -->
   <img src="assets/images/iirokuva.jpg" alt="Iiro Kivistö" class="personal-photo">
 
+
 <script>
   const textEl = document.getElementById('text-content');
 
-  const translations = {
-    en: {
-      "products-title": "Projects",
-      "gallery1-caption": "Ina stool",
-      "gallery2-caption": "IINO stool",
-      "gallery3-caption": "Bera firewood basket",
-      "contact-line1": "Contact me :)",
-      "contact-email": "Email: iirokivisto@protonmail.com",
-      "contact-phone": "Phone: +358 40 757 1896"
-    }
-  };
-
-  function updateTranslations(lang) {
-    Object.keys(translations[lang]).forEach(key => {
-      const el = document.querySelector(`[data-key="${key}"]`);
-      if (el) el.textContent = translations[lang][key];
-    });
-  }
-
-  const currentLang = 'en';
-  loadAboutText(currentLang);
-  updateTranslations(currentLang);
-
-  function loadAboutText(lang) {
+  function loadAboutText() {
     const path = 'about_en.txt';
     fetch(path)
       .then(resp => resp.ok ? resp.text() : 'Error loading text.')
@@ -179,6 +210,8 @@
       })
       .catch(() => textEl.textContent = 'Error loading text.');
   }
+
+  loadAboutText();
 </script>
 
   <footer class="site-footer">
