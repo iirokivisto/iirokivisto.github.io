@@ -45,6 +45,26 @@
       color: #555;
     }
 
+    .main-title {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    
+    .main-title h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 8px;
+      font-variation-settings: 'wght' 500;
+    }
+    
+    .main-title h2 {
+      font-size: clamp(16px, 2.5vw, 22px);
+      color: #444;
+      font-weight: 400;
+      margin-top: 0;
+    }
+
+
     body {
       display: flex;
       flex-direction: column;
@@ -137,10 +157,11 @@
 
 <body>
   <!-- Main heading area -->
-  <div class="intro-header">
+  <div class="main-title">
     <h1>Iiro Kivistö – 3D Artist, Designer & Craftsman</h1>
-    <p class="subsubtitle">Interior, Product & Architectural Visualization – Rauma, Finland</p>
+    <h2>Interior, Product & Architectural Visualization – Rauma, Finland</h2>
   </div>
+
 
   
   <!-- Logo at the top -->
@@ -159,7 +180,7 @@
   <!-- Personal photo after contact info -->
   <img src="assets/images/iirokuva.jpg" alt="Iiro Kivistö" class="personal-photo">
 
-  <h2 class="section-title">Projects</h2>
+  <div class="section-title">Projects</div>
 
   <!-- Original three products first -->
   <img src="assets/images/Inastool_v002.jpg" alt="Ina stool" class="gallery-image">
