@@ -1,2 +1,2 @@
 # iirokivisto.github.io
-IINO-Design website
+iirokivisto.com website
