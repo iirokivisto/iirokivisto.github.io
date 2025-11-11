@@ -35,18 +35,32 @@
       font-family: "gravita-geo-variable", sans-serif;
       color: #222222;
     }
+
     img {
       max-width: 25%;
       height: auto;
       margin-top: 50px;
       margin-bottom: 20px;
     }
+
+    /* Personal photo styling */
+    .personal-photo {
+      max-width: 200px;
+      height: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+    }
+
     @media (max-width: 600px) {
       img {
         max-width: 70%;
       }
+      .personal-photo {
+        max-width: 60%;
+      }
     }
-    
+
     p {
       max-width: 33%;
       width: 90%;
@@ -56,7 +70,6 @@
       font-size: clamp(14px, 2vw, 16px);
       white-space: pre-line;
     }
-
 
     .section-title {
       font-size: clamp(18px, 3vw, 24px);
@@ -131,6 +144,10 @@
   </div>
   
   <img src="assets/images/Kivistologo_v2.png" alt="logo">
+
+  <!-- Personal photo under the logo -->
+  <img src="assets/images/iirokuva.jpg" alt="Iiro Kivistö" class="personal-photo">
+
   <p id="text-content">Loading...</p>
   
   <h2 class="section-title" data-key="products-title">Tuotteet</h2>
