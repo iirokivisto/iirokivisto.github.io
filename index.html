@@ -27,16 +27,24 @@
 
   <style>
 
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
+    .intro-header {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      line-height: 1.4;
     }
+    
+    .intro-header h1 {
+      font-size: clamp(20px, 3.5vw, 32px);
+      margin-bottom: 8px;
+      font-variation-settings: 'wght' 500;
+    }
+    
+    .subsubtitle {
+      font-size: clamp(14px, 2vw, 16px);
+      color: #555;
+    }
+
     body {
       display: flex;
       flex-direction: column;
@@ -128,10 +136,12 @@
 </head>
 
 <body>
-  <!-- Main visible heading for SEO -->
-  <h1 style="text-align:center; margin-top:20px; margin-bottom:40px; font-size:clamp(24px,4vw,36px);">
-  Iiro Kivistö – 3D Artist, Designer & Craftsman | Interior, Product & Architectural Visualization | Finland, Rauma
-  </h1>
+  <!-- Main heading area -->
+  <div class="intro-header">
+    <h1>Iiro Kivistö – 3D Artist, Designer & Craftsman</h1>
+    <p class="subsubtitle">Interior, Product & Architectural Visualization – Rauma, Finland</p>
+  </div>
+
   
   <!-- Logo at the top -->
   <img src="assets/images/Kivistologo_v2.png" alt="logo">
@@ -195,6 +205,18 @@
   <img src="assets/images/pondering.jpg" alt="pondering" class="gallery-image">
   <p class="caption">Pondering (digital artwork)</p>
 
+  <img src="assets/images/Goat_ink_drawing.jpg" alt="Goat_ink_drawing" class="gallery-image">
+  <p class="caption">Goat ink drawing</p> 
+  
+  <img src="assets/images/Stormy_1.jpg" alt="Stormy_1" class="gallery-image">
+  <p class="caption">Stormy ink drawing 1</p>
+
+  <img src="assets/images/Stormy_2.jpg" alt="Stormy_2" class="gallery-image">
+  <p class="caption">Stormy ink drawing 2</p>
+
+  <img src="assets/images/Stormy_3.jpg" alt="Stormy_3" class="gallery-image">
+  <p class="caption">Stormy ink drawing 3</p>
+
   <img src="assets/images/big_blossom.jpg" alt="big_blossom" class="gallery-image">
   <p class="caption">Big blossom</p>
 
@@ -213,21 +235,6 @@
   <img src="assets/images/think.jpg" alt="think" class="gallery-image">
   <p class="caption">Think</p>
 
-  <!-- New images added at the end -->
-  <img src="assets/images/Goat_ink_drawing.jpg" alt="Goat_ink_drawing" class="gallery-image">
-  <p class="caption">Goat ink drawing</p>
-
-  <img src="assets/images/Stormy_1.jpg" alt="Stormy_1" class="gallery-image">
-  <p class="caption">Stormy ink drawing 1</p>
-
-  <img src="assets/images/Stormy_2.jpg" alt="Stormy_2" class="gallery-image">
-  <p class="caption">Stormy ink drawing 2</p>
-
-  <img src="assets/images/Stormy_3.jpg" alt="Stormy_3" class="gallery-image">
-  <p class="caption">Stormy ink drawing 3</p>
-
-  <img src="assets/images/Hehku_lamp.jpg" alt="Hehku_lamp" class="gallery-image">
-  <p class="caption">Hehku lamp Product</p>
 
 <script>
   const textEl = document.getElementById('text-content');
