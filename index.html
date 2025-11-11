@@ -43,21 +43,9 @@
       margin-bottom: 20px;
     }
 
-    /* Personal photo styling */
-    .personal-photo {
-      max-width: 200px;
-      height: auto;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      border-radius: 0;
-    }
-
     @media (max-width: 600px) {
       img {
         max-width: 70%;
-      }
-      .personal-photo {
-        max-width: 60%;
       }
     }
 
@@ -112,43 +100,16 @@
       margin-top: 40px;
       padding-bottom: 20px;
     }
-
-    .language-switch {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #bbb;
-      text-align: center;
-    }
-    .language-switch [data-lang] {
-      cursor: pointer;
-      color: #bbb;
-      margin: 0 6px;
-      text-decoration: none;
-    }
-    .language-switch [data-lang]:hover {
-      color: #666;
-    }
-    .language-switch .active {
-      color: #222;
-      font-weight: 500;
-    }
   </style>
 </head>
 
 <body>
 
-  <div class="language-switch">
-    <span data-lang="fi">Suomi</span> |
-    <span data-lang="en" class="active">English</span>
-  </div>
-
-  <!-- Personal photo at the top -->
-  <img src="assets/images/iirokuva.jpg" alt="Iiro Kivistö" class="personal-photo">
-
-  <p id="text-content">Loading...</p>
-
-  <!-- Logo as signature after text -->
+  <!-- Logo at the top -->
   <img src="assets/images/Kivistologo_v2.png" alt="logo">
+
+  <!-- About text -->
+  <p id="text-content">Loading...</p>
 
   <h2 class="section-title" data-key="products-title">Projects</h2>
   
@@ -171,15 +132,6 @@
   const textEl = document.getElementById('text-content');
 
   const translations = {
-    fi: {
-      "products-title": "Tuotteet",
-      "gallery1-caption": "Ina-jakkara",
-      "gallery2-caption": "IINO-jakkara",
-      "gallery3-caption": "Bera-puukori",
-      "contact-line1": "Ota yhteyttä :)",
-      "contact-email": "Sähköposti: iirokivisto@protonmail.com",
-      "contact-phone": "Puhelin: +358 40 757 1896"
-    },
     en: {
       "products-title": "Projects",
       "gallery1-caption": "Ina stool",
@@ -198,35 +150,19 @@
     });
   }
 
-  let currentLang = localStorage.getItem('iino_lang') || 'en';
+  const currentLang = 'en';
   loadAboutText(currentLang);
   updateTranslations(currentLang);
 
   function loadAboutText(lang) {
-    const path = (lang === 'en') ? 'about_en.txt' : 'about.txt';
+    const path = 'about_en.txt';
     fetch(path)
       .then(resp => resp.ok ? resp.text() : 'Error loading text.')
       .then(txt => {
         textEl.textContent = txt;
-        updateTranslations(lang);
-
-        document.querySelectorAll('.language-switch [data-lang]').forEach(btn => {
-          btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-        });
       })
       .catch(() => textEl.textContent = 'Error loading text.');
   }
-
-  document.addEventListener('click', (e) => {
-    if (e.target.matches('.language-switch [data-lang]')) {
-      const selected = e.target.getAttribute('data-lang');
-      if (selected !== currentLang) {
-        currentLang = selected;
-        localStorage.setItem('iino_lang', currentLang);
-        loadAboutText(currentLang);
-      }
-    }
-  });
 </script>
 
   <footer class="site-footer">
