@@ -43,9 +43,20 @@
       margin-bottom: 20px;
     }
 
+    .personal-photo {
+      max-width: 25%;
+      height: auto;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      border-radius: 0; /* no circular edges */
+    }
+
     @media (max-width: 600px) {
       img {
         max-width: 70%;
+      }
+      .personal-photo {
+        max-width: 60%;
       }
     }
 
@@ -121,7 +132,10 @@
   
   <img src="assets/images/puukori_v1.jpg" alt="Gallery image 3" class="gallery-image">
   <p class="caption" data-key="gallery3-caption">Bera firewood basket</p>
-  
+
+  <!-- Personal photo at the end before contact info -->
+  <img src="assets/images/iirokuva.jpg" alt="Iiro Kivistö" class="personal-photo">
+
   <p class="contact-info">
     <span data-key="contact-line1">Contact me :)</span><br>
     <span data-key="contact-email">Email: iirokivisto@protonmail.com</span><br>
