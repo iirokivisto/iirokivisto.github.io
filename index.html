@@ -129,18 +129,21 @@
     padding-bottom: 20px;
   }
   
-  .contact-form {
+  .contact-block {
     max-width: 400px;
     width: 90%;
-    margin: 50px auto 40px auto; /* keskitetty koko blokkina */
+    margin: 50px auto 0;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* kenttien väliin tilaa */
   }
   
-  .contact-form input,
-  .contact-form textarea {
+  .contact-block form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .contact-block input,
+  .contact-block textarea {
     font-family: inherit;
     font-size: 14px;
     padding: 10px;
@@ -148,24 +151,22 @@
     border-radius: 4px;
   }
   
-  .contact-form textarea {
+  .contact-block textarea {
     resize: vertical;
   }
   
-  .contact-form button {
+  .contact-block button {
     padding: 10px;
     font-size: 14px;
     border: none;
     background-color: #222;
     color: #fff;
     cursor: pointer;
-    border-radius: 4px;
   }
   
-  .contact-form button:hover {
+  .contact-block button:hover {
     background-color: #444;
   }
-
   
   </style>
 
@@ -244,13 +245,34 @@
   <img src="assets/images/pondering.jpg" alt="Digitaalinen taideteos: Pondering" class="gallery-image">
 
   <!-- Contact form -->
- <section class="contact-form">
-    <h2 class="section-title">Yhteydenotto</h2>
+  <section class="contact-block">
+    <h2 class="section-title" data-key="contact-title">Yhteydenotto</h2>
   
-    <form action="https://formspree.io/f/mbddlprg" method="POST">
-      <input type="text" name="name" placeholder="Nimi" required>
-      <input type="email" name="email" placeholder="Sähköposti" required>
-      <textarea name="message" rows="5" placeholder="Viesti" required></textarea>
+    <form
+      action="https://formspree.io/f/mbddlprg"
+      method="POST"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="Nimi"
+        required
+      >
+  
+      <input
+        type="email"
+        name="email"
+        placeholder="Sähköposti"
+        required
+      >
+  
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="Viesti"
+        required
+      ></textarea>
+  
       <button type="submit">Lähetä</button>
     </form>
   </section>
