@@ -24,113 +24,110 @@
   <link rel="stylesheet" href="https://use.typekit.net/rsf7yot.css">
 
   <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      margin: 30px 20px;
-      background-color: #ffffff;
-      font-family: "gravita-geo-variable", sans-serif;
-      color: #222222;
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 30px 20px;
+    background-color: #ffffff;
+    font-family: "gravita-geo-variable", sans-serif;
+    color: #222222;
+  }
+  
+  .main-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .main-title h1 {
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 8px;
+    font-variation-settings: 'wght' 500;
+  }
+  
+  .main-title h2 {
+    font-size: clamp(16px, 2.5vw, 22px);
+    color: #444;
+    font-weight: 400;
+    margin-top: 0;
+  }
+  
+  /* Logokuva */
+  .logo {
+    max-width: 25%;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  /* Henkilökuva */
+  .personal-photo {
+    max-width: 25%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 0;
+  }
+  
+  /* Gallerian kuvat */
+  .gallery-image {
+    max-width: 30%;
+    height: auto;
+    margin-top: 20px;
+  }
+  
+  /* Kuvatekstit */
+  .caption {
+    max-width: 30%;
+    text-align: center;
+    font-size: clamp(13px, 1.5vw, 15px);
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 30px;
+    word-break: break-word;
+  }
+  
+  /* Responsiivisuus */
+  @media (max-width: 600px) {
+    .logo {
+      max-width: 70%;
     }
-
-    .main-title {
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 40px;
-    }
-
-    .main-title h1 {
-      font-size: clamp(24px, 4vw, 36px);
-      margin-bottom: 8px;
-      font-variation-settings: 'wght' 500;
-    }
-
-    .main-title h2 {
-      font-size: clamp(16px, 2.5vw, 22px);
-      color: #444;
-      font-weight: 400;
-      margin-top: 0;
-    }
-
-    img {
-      max-width: 25%;
-      height: auto;
-      margin-top: 50px;
-      margin-bottom: 20px;
-    }
-
     .personal-photo {
-      max-width: 25%;
-      height: auto;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      border-radius: 0;
+      max-width: 60%;
     }
-
-    @media (max-width: 600px) {
-      img {
-        max-width: 70%;
-      }
-      .personal-photo {
-        max-width: 60%;
-      }
+    .gallery-image, .caption {
+      max-width: 80%;
     }
-
-    p {
-      max-width: 33%;
-      width: 90%;
-      min-width: 200px;
-      text-align: center;
-      line-height: 1.4;
-      font-size: clamp(14px, 2vw, 16px);
-      white-space: pre-line;
-    }
-
-    .contact-info {
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
-
-    .section-title {
-      font-size: clamp(18px, 3vw, 24px);
-      text-align: center;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      color: #222222;
-      font-variation-settings: 'wght' 400;
-    }
-
-    .gallery-image {
-      max-width: 30%;
-      height: auto;
-      margin-top: 20px;
-    }
-
-    .caption {
-      max-width: 30%;
-      text-align: center;
-      font-size: clamp(13px, 1.5vw, 15px);
-      color: #555;
-      margin-top: 0;
-      margin-bottom: 30px;
-      word-break: break-word;
-    }
-
-    @media (max-width: 600px) {
-      .gallery-image, .caption {
-        max-width: 80%;
-      }
-    }
-
-    .site-footer {
-      text-align: center;
-      font-size: 13px;
-      color: #999999;
-      margin-top: 40px;
-      padding-bottom: 20px;
-    }
+  }
+  
+  p {
+    max-width: 33%;
+    width: 90%;
+    min-width: 200px;
+    text-align: center;
+    line-height: 1.4;
+    font-size: clamp(14px, 2vw, 16px);
+    white-space: pre-line;
+  }
+  
+  .section-title {
+    font-size: clamp(18px, 3vw, 24px);
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #222222;
+    font-variation-settings: 'wght' 400;
+  }
+  
+  .site-footer {
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+    margin-top: 40px;
+    padding-bottom: 20px;
+  }
   </style>
 
   <script type="application/ld+json">
@@ -158,7 +155,7 @@
   </div>
 
   <!-- Logo at the top -->
-  <img src="assets/images/Taiteilijan_logo.png" alt="Taiteilijan logo">
+  <img src="assets/images/Taiteilijan_logo.png" alt="Taiteilijan logo" class="logo">
 
   <!-- About text -->
   <p>
