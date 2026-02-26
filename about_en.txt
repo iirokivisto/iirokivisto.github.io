@@ -1,5 +1,5 @@
 <p>
-Welcome to my gallery. Here you can see a selection of my latest artworks. I create art both on commission and from my own inspiration.
+Welcome to my portfolio site. Here you can see a selection of my latest artworks. I create art both on commission and from my own inspiration.
 </p>
 
 <p>
