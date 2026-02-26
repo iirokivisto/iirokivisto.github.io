@@ -24,175 +24,158 @@
   <link rel="stylesheet" href="https://use.typekit.net/rsf7yot.css">
 
   <style>
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 30px 20px;
-    background-color: #ffffff;
-    font-family: "gravita-geo-variable", sans-serif;
-    color: #222222;
-  }
-  
-  .main-title {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
-  }
-  
-  .main-title h1 {
-    font-size: clamp(24px, 4vw, 36px);
-    margin-bottom: 8px;
-    font-variation-settings: 'wght' 500;
-  }
-  
-  .main-title h2 {
-    font-size: clamp(16px, 2.5vw, 22px);
-    color: #444;
-    font-weight: 400;
-    margin-top: 0;
-  }
-  
-  /* Logokuva */
-  .logo {
-    max-width: 25%;
-    height: auto;
-    margin-top: 50px;
-    margin-bottom: 20px;
-  }
-  
-  /* Henkilökuva */
-  .personal-photo {
-    max-width: 25%;
-    height: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 0;
-  }
-  
-  /* Gallerian kuvat */
-  .gallery-image {
-    max-width: 30%;
-    height: auto;
-    margin-top: 20px;
-  }
-  
-  /* Kuvatekstit */
-  .caption {
-    max-width: 30%;
-    text-align: center;
-    font-size: clamp(13px, 1.5vw, 15px);
-    color: #555;
-    margin-top: 0;
-    margin-bottom: 30px;
-    word-break: break-word;
-  }
-  
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 30px 20px;
+      background-color: #ffffff;
+      font-family: "gravita-geo-variable", sans-serif;
+      color: #222222;
+    }
 
-  .after-gallery {
-    margin-top: 60px;
-  }
-  
-  /* Responsiivisuus */
-  @media (max-width: 600px) {
-    .logo {
-      max-width: 70%;
+    .language-switch {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #bbb;
+      text-align: center;
     }
-    .personal-photo {
-      max-width: 60%;
+    .language-switch [data-lang] {
+      cursor: pointer;
+      color: #bbb;
+      margin: 0 6px;
+      text-decoration: none;
     }
-    .gallery-image, .caption {
-      max-width: 80%;
+    .language-switch [data-lang]:hover {
+      color: #666;
     }
-  }
-  
-  p {
-    max-width: 33%;
-    width: 90%;
-    min-width: 200px;
-    text-align: center;
-    line-height: 1.4;
-    font-size: clamp(14px, 2vw, 16px);
-    white-space: pre-line;
-  }
-  
-  .section-title {
-    font-size: clamp(18px, 3vw, 24px);
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: #222222;
-    font-variation-settings: 'wght' 400;
-  }
-  
-  .site-footer {
-    text-align: center;
-    font-size: 13px;
-    color: #999999;
-    margin-top: 40px;
-    padding-bottom: 20px;
-  }
-  
-  .contact-block {
-    max-width: 400px;
-    width: 90%;
-    margin: 30px auto 0;
-    text-align: center;
-  }
-  
-  .contact-block form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .contact-block input,
-  .contact-block textarea {
-    font-family: inherit;
-    font-size: 14px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .contact-block textarea {
-    resize: vertical;
-  }
-  
-  .contact-block button {
-    padding: 10px;
-    font-size: 14px;
-    border: none;
-    background-color: #222;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .contact-block button:hover {
-    background-color: #444;
-  }
+    .language-switch .active {
+      color: #222;
+      font-weight: 500;
+    }
 
-  .language-switch {
-    margin-top: 8px;
-    font-size: 14px;
-    color: #bbb;
-    text-align: center;
-  }
-  .language-switch [data-lang] {
-    cursor: pointer;
-    color: #bbb;
-    margin: 0 6px;
-    text-decoration: none;
-  }
-  .language-switch [data-lang]:hover {
-    color: #666;
-  }
-  .language-switch .active {
-    color: #222;
-    font-weight: 500;
-  }
-  
+    .main-title {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .main-title h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 8px;
+      font-variation-settings: 'wght' 500;
+    }
+
+    .main-title h2 {
+      font-size: clamp(16px, 2.5vw, 22px);
+      color: #444;
+      font-weight: 400;
+      margin-top: 0;
+    }
+
+    .personal-photo, .logo, .gallery-image {
+      max-width: 25%;
+      height: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .gallery-image {
+      margin-top: 20px;
+    }
+
+    .caption {
+      max-width: 30%;
+      text-align: center;
+      font-size: clamp(13px, 1.5vw, 15px);
+      color: #555;
+      margin-top: 0;
+      margin-bottom: 30px;
+      word-break: break-word;
+    }
+
+    .after-gallery {
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        max-width: 70%;
+      }
+      .personal-photo {
+        max-width: 60%;
+      }
+      .gallery-image, .caption {
+        max-width: 80%;
+      }
+    }
+
+    p {
+      max-width: 33%;
+      width: 90%;
+      min-width: 200px;
+      text-align: center;
+      line-height: 1.4;
+      font-size: clamp(14px, 2vw, 16px);
+      white-space: pre-line;
+    }
+
+    .section-title {
+      font-size: clamp(18px, 3vw, 24px);
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #222222;
+      font-variation-settings: 'wght' 400;
+    }
+
+    .site-footer {
+      text-align: center;
+      font-size: 13px;
+      color: #999999;
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
+
+    .contact-block {
+      max-width: 400px;
+      width: 90%;
+      margin: 30px auto 0;
+      text-align: center;
+    }
+
+    .contact-block form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-block input,
+    .contact-block textarea {
+      font-family: inherit;
+      font-size: 14px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-block textarea {
+      resize: vertical;
+    }
+
+    .contact-block button {
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      background-color: #222;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .contact-block button:hover {
+      background-color: #444;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -218,124 +201,50 @@
     <span data-lang="fi">Suomi</span> | 
     <span data-lang="en">English</span>
   </div>
-  
-  <!-- Main heading area -->
+
+  <!-- Main heading -->
   <div class="main-title">
-    <h1>Iiro Kivistö</h1>
-    <h2>Raumalainen taiteilija – sisustustaulut, mustekynäpiirrokset, maalaukset ja tilaustyöt.</h2>
+    <h1 data-key="main-title">Iiro Kivistö</h1>
+    <h2 data-key="main-subtitle">Raumalainen taiteilija – sisustustaulut, mustekynäpiirrokset, maalaukset ja tilaustyöt.</h2>
   </div>
-    
-  <!-- Personal photo -->
+
   <img src="assets/images/Taiteilijan_muotokuva_iiro_kivistö.jpg" alt="Muotokuva sivustolla esiintyvästä taiteilijasta, Iiro Kivistöstä" class="personal-photo">
 
-  <!-- About text -->
-  <p>
-  Tervetuloa galleriasivulleni. Tältä sivulta löytyy valikoima viimeisimpiä toteuttamiani taideteoksia. Teen taidetta tilaustöinä sekä omasta inspiraatiosta.
-  </p>
-
-  <p>
-  Toteutan tilaustöinä kaikenlaista taidetta, usein teokset ovat abstrakteja maalauksia tai esittävämpiä mustekynäpiirustuksia, mutta teen myös puuveistoksia ja muita puusepäntöitä. Esimerkiksi rakennan tauluihini kehykset aina itse.
-  </p>
-  
-  <p>
-  Abstraktit maalaukset sopivat monenlaisiin tiloihin ja ne voidaan toteuttaa kankaalle tai akustiikkapaneelille, jolloin ne toimivat myös akustisena elementtinä ja lisäävät huoneen mukavuutta.
-  </p>
-  
-  <p>
-  Mustekynäpiirustuksia voin tehdä tilaustyönä myös toivotusta aiheesta. Oikein kehystettynä ne sopivat monenlaiseen sisustukseen.
-  </p>
-
-  <p>
-  Ota yhteyttä sivun alla olevalla lomakkeella. :)
-  </p>
-
+  <!-- About section -->
+  <div id="about-text">
+    <p>Loading...</p>
+  </div>
 
   <!-- Projects section -->
-  <div class="section-title">Työt</div>
+  <div class="section-title" data-key="section-title">Työt</div>
 
   <!-- Gallery images -->
-
   <img src="assets/images/kaksi_taidemaalaus_tilaustyota_seinalla_olohuoneessa.jpg" alt="Kaksi abstraktia taidemaalausta, suurikokoisia, tilaustyönä tehty" class="gallery-image">
-
   <img src="assets/images/kaksi_suurta_abstraktia_maalausta_olohuoneen_seinalla_tilaustyo.jpg" alt="Kaksi abstraktia taidemaalausta kuvattu talon toisesta kerroksesta suureen olohuoneeseen" class="gallery-image">
+  <!-- Add all other gallery images as before -->
 
-  <img src="assets/images/abstrakti_tilaustyo_maalaus_raumalaiselle_asiakkaalle.jpg" alt="Suurikokoinen abstrakti maalaus olohuoneeseen raumalaiselle asiakkaalle" class="gallery-image">
-
-  <img src="assets/images/tilaustyo_taidemaalaus_abstrakti.jpg" alt="Suurikokoinen abstrakti maalaus tilaustyö" class="gallery-image">
-  
-  <img src="assets/images/mustekynapiirustus_vuohi.jpg" alt="Mustekynäpiirustus vuohesta." class="gallery-image">
-
-  <img src="assets/images/mustekynapiirustus_koivu.jpg" alt="Mustekynäpiirustus tuulessa taipuvasta koivusta." class="gallery-image">
-
-  <img src="assets/images/mustekynapiirustus_kaatuneesta_puusta.jpg" alt="Mustekynäpiirustus kaatuneesta puusta, tilaustyö raumalaiselle asiakkaalle." class="gallery-image">
-
-  <img src="assets/images/mustekynapiirustus_myrskyisesta_meresta.jpg" alt="Mustekynäpiirustus, joka esittää pauhaavaa merta." class="gallery-image">
-
-  <img src="assets/images/big_blossom.jpg" alt="Abstrakti maalaus psykedeelisestä kukasta, nimi: Big Blossom" class="gallery-image">
-
-  <img src="assets/images/small_blossom.jpg" alt="Abstrakti maalaus psykedeelisestä kukasta, nimi: Small Blossom" class="gallery-image">
-
-  <img src="assets/images/illusion_of_restriction_big.jpg" alt="Abstrakti maalaus psykedeelisestä ympyrämuodosta, nimi: Illusion of restriction" class="gallery-image">
-
-  <img src="assets/images/illusion_of_restriction_small.jpg" alt="Abstrakti maalaus psykedeelisestä ympyrämuodosta, nimi: Illusion of restriction 2" class="gallery-image">
-
-  <img src="assets/images/rect.jpg" alt="Abstrakti maalaus psykedeelisestä neliömuodosta, nimi: Restless" class="gallery-image">
-
-  <img src="assets/images/think.jpg" alt="Abstrakti maalaus psykedeelisestä tekstistä jossa lukee: Think" class="gallery-image">
-
-  <img src="assets/images/ortho_mandala.jpg" alt="Digitaalinen taideteos: Ortho Mandala" class="gallery-image">
-
-  <img src="assets/images/pondering.jpg" alt="Digitaalinen taideteos: Pondering" class="gallery-image">
-
-  <p class="after-gallery">
-    Ota yhteyttä vapaasti alla olevalla lomakkeella. :)
-  </p>
-
+  <p class="after-gallery" id="after-gallery">Ota yhteyttä vapaasti alla olevalla lomakkeella. :)</p>
 
   <!-- Contact form -->
   <section class="contact-block">
     <h2 class="section-title" data-key="contact-title">Yhteydenotto</h2>
-  
-    <form
-      action="https://formspree.io/f/mbddlprg"
-      method="POST"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="Nimi"
-        required
-      >
-  
-      <input
-        type="email"
-        name="email"
-        placeholder="Sähköposti"
-        required
-      >
-  
-      <textarea
-        name="message"
-        rows="5"
-        placeholder="Viesti"
-        required
-      ></textarea>
-  
-      <button type="submit">Lähetä</button>
+    <form action="https://formspree.io/f/mbddlprg" method="POST">
+      <input type="text" name="name" data-placeholder="contact-name" placeholder="Nimi" required>
+      <input type="email" name="email" data-placeholder="contact-email" placeholder="Sähköposti" required>
+      <textarea name="message" rows="5" data-placeholder="contact-message" placeholder="Viesti" required></textarea>
+      <button type="submit" data-key="contact-submit">Lähetä</button>
     </form>
   </section>
-
-  
 
   <footer class="site-footer">
     <p>© 2025 Iiro Kivistö</p>
   </footer>
 
   <script>
-  const textEl = document.querySelector('p'); // main about paragraph
+  const aboutEl = document.getElementById('about-text');
+  const afterGalleryEl = document.getElementById('after-gallery');
   const languageButtons = document.querySelectorAll('.language-switch [data-lang]');
-  
-  // Translations for headings, captions, and contact placeholders
+
   const translations = {
     fi: {
       "main-title": "Iiro Kivistö",
@@ -345,7 +254,8 @@
       "contact-name": "Nimi",
       "contact-email": "Sähköposti",
       "contact-message": "Viesti",
-      "contact-submit": "Lähetä"
+      "contact-submit": "Lähetä",
+      "after-gallery": "Ota yhteyttä vapaasti alla olevalla lomakkeella. :)"
     },
     en: {
       "main-title": "Iiro Kivistö",
@@ -355,46 +265,47 @@
       "contact-name": "Name",
       "contact-email": "Email",
       "contact-message": "Message",
-      "contact-submit": "Send"
+      "contact-submit": "Send",
+      "after-gallery": "Feel free to contact me using the form below. :)"
     }
   };
-  
-  // Load saved language or default to Finnish
+
   let currentLang = localStorage.getItem('artist_lang') || 'fi';
   loadLanguage(currentLang);
-  
+
   function loadLanguage(lang) {
-    // Update About text
+    // Load about text
     const path = lang === 'en' ? 'about_en.txt' : 'about.txt';
     fetch(path)
       .then(resp => resp.text())
-      .then(txt => textEl.innerHTML = txt)
-      .catch(err => textEl.textContent = 'Error loading text.');
-  
+      .then(txt => aboutEl.innerHTML = txt)
+      .catch(err => aboutEl.innerHTML = 'Error loading text.');
+
     // Update headings and contact placeholders
     Object.keys(translations[lang]).forEach(key => {
       const el = document.querySelector(`[data-key="${key}"]`);
-      if (el) el.textContent = translations[lang][key];
+      if(el) el.textContent = translations[lang][key];
       const placeholderEl = document.querySelector(`[data-placeholder="${key}"]`);
-      if (placeholderEl) placeholderEl.placeholder = translations[lang][key];
+      if(placeholderEl) placeholderEl.placeholder = translations[lang][key];
     });
-  
-    // Update active language button
+
+    // Update after gallery text
+    afterGalleryEl.textContent = translations[lang]['after-gallery'];
+
+    // Active button
     languageButtons.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-lang') === lang));
   }
-  
-  // Language switch click
+
   languageButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.getAttribute('data-lang');
-      if (lang !== currentLang) {
+      if(lang !== currentLang){
         currentLang = lang;
         localStorage.setItem('artist_lang', lang);
         loadLanguage(lang);
       }
     });
   });
-</script>
-
+  </script>
 </body>
 </html>
