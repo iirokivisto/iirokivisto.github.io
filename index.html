@@ -331,5 +331,70 @@
     <p>© 2025 Iiro Kivistö</p>
   </footer>
 
+  <script>
+  const textEl = document.querySelector('p'); // main about paragraph
+  const languageButtons = document.querySelectorAll('.language-switch [data-lang]');
+  
+  // Translations for headings, captions, and contact placeholders
+  const translations = {
+    fi: {
+      "main-title": "Iiro Kivistö",
+      "main-subtitle": "Raumalainen taiteilija – sisustustaulut, mustekynäpiirrokset, maalaukset ja tilaustyöt.",
+      "section-title": "Työt",
+      "contact-title": "Yhteydenotto",
+      "contact-name": "Nimi",
+      "contact-email": "Sähköposti",
+      "contact-message": "Viesti",
+      "contact-submit": "Lähetä"
+    },
+    en: {
+      "main-title": "Iiro Kivistö",
+      "main-subtitle": "Artist from Rauma – Interior paintings, ink drawings, paintings, and commissions.",
+      "section-title": "Works",
+      "contact-title": "Contact",
+      "contact-name": "Name",
+      "contact-email": "Email",
+      "contact-message": "Message",
+      "contact-submit": "Send"
+    }
+  };
+  
+  // Load saved language or default to Finnish
+  let currentLang = localStorage.getItem('artist_lang') || 'fi';
+  loadLanguage(currentLang);
+  
+  function loadLanguage(lang) {
+    // Update About text
+    const path = lang === 'en' ? 'about_en.txt' : 'about.txt';
+    fetch(path)
+      .then(resp => resp.text())
+      .then(txt => textEl.innerHTML = txt)
+      .catch(err => textEl.textContent = 'Error loading text.');
+  
+    // Update headings and contact placeholders
+    Object.keys(translations[lang]).forEach(key => {
+      const el = document.querySelector(`[data-key="${key}"]`);
+      if (el) el.textContent = translations[lang][key];
+      const placeholderEl = document.querySelector(`[data-placeholder="${key}"]`);
+      if (placeholderEl) placeholderEl.placeholder = translations[lang][key];
+    });
+  
+    // Update active language button
+    languageButtons.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-lang') === lang));
+  }
+  
+  // Language switch click
+  languageButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      if (lang !== currentLang) {
+        currentLang = lang;
+        localStorage.setItem('artist_lang', lang);
+        loadLanguage(lang);
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
