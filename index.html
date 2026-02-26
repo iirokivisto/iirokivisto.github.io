@@ -7,12 +7,12 @@
   <title>Iiro Kivistö | Contemporary Artist</title>
 
   <!-- SEO meta tags -->
-  <meta name="description" content="Contemporary artwork by Iiro Kivistö. Large-scale abstract paintings, Ink drawings, and commissioned works. Portfolio and contact information.">
+  <meta name="description" content="Contemporary artwork by Iiro Kivistö. Large-scale abstract paintings, ink drawings, and commissioned works. Portfolio and contact information.">
   <meta name="author" content="Iiro Kivistö">
 
   <!-- Open Graph / Social sharing -->
   <meta property="og:title" content="Iiro Kivistö">
-  <meta property="og:description" content="Suomalainen taiteilija. Mustekynäpiirrokset, maalaukset ja tilaustyöt.">
+  <meta property="og:description" content="Contemporary visual artist working with ink, large-scale abstract paintings, and commissioned works.">
   <meta property="og:image" content="https://iirokivisto.com/assets/images/Taiteilijan_logo.png">
   <meta property="og:url" content="https://iirokivisto.com">
   <meta property="og:type" content="website">
@@ -27,32 +27,11 @@
     body {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
       margin: 30px 20px;
       background-color: #ffffff;
       font-family: "gravita-geo-variable", sans-serif;
       color: #222222;
-    }
-
-    .language-switch {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #bbb;
-      text-align: center;
-    }
-    .language-switch [data-lang] {
-      cursor: pointer;
-      color: #bbb;
-      margin: 0 6px;
-      text-decoration: none;
-    }
-    .language-switch [data-lang]:hover {
-      color: #666;
-    }
-    .language-switch .active {
-      color: #222;
-      font-weight: 500;
     }
 
     .main-title {
@@ -74,50 +53,20 @@
       margin-top: 0;
     }
 
-    .personal-photo, .logo, .gallery-image {
+    .personal-photo,
+    .gallery-image {
       max-width: 25%;
       height: auto;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
     #about-text {
       display: flex;
       flex-direction: column;
-      align-items: center;  /* horizontal centering */
-      text-align: center;   /* center text inside paragraphs */
-      width: 100%;          /* take full width */
-      margin-bottom: 40px;
-    }
-
-    .gallery-image {
-      margin-top: 20px;
-    }
-
-    .caption {
-      max-width: 30%;
+      align-items: center;
       text-align: center;
-      font-size: clamp(13px, 1.5vw, 15px);
-      color: #555;
-      margin-top: 0;
-      margin-bottom: 30px;
-      word-break: break-word;
-    }
-
-    .after-gallery {
-      margin-top: 60px;
-    }
-
-    @media (max-width: 600px) {
-      .logo {
-        max-width: 70%;
-      }
-      .personal-photo {
-        max-width: 60%;
-      }
-      .gallery-image, .caption {
-        max-width: 80%;
-      }
+      width: 100%;
+      margin-bottom: 40px;
     }
 
     p {
@@ -133,18 +82,22 @@
     .section-title {
       font-size: clamp(18px, 3vw, 24px);
       text-align: center;
-      margin-top: 40px;
-      margin-bottom: 20px;
-      color: #222222;
+      margin: 40px 0 20px;
       font-variation-settings: 'wght' 400;
     }
 
-    .site-footer {
-      text-align: center;
-      font-size: 13px;
-      color: #999999;
-      margin-top: 40px;
-      padding-bottom: 20px;
+    .after-gallery {
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      .personal-photo {
+        max-width: 60%;
+      }
+      .gallery-image,
+      p {
+        max-width: 80%;
+      }
     }
 
     .contact-block {
@@ -185,71 +138,122 @@
     .contact-block button:hover {
       background-color: #444;
     }
+
+    .site-footer {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      margin-top: 40px;
+      padding-bottom: 20px;
+    }
   </style>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Iiro Kivistö",
-  "jobTitle": "Visual Artist",
-  "url": "https://iirokivisto.com"
-}
-</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Iiro Kivistö",
+    "jobTitle": "Visual Artist",
+    "url": "https://iirokivisto.com"
+  }
+  </script>
 
 </head>
 
 <body>
 
-  <div class="language-switch">
-    <span data-lang="fi">Suomi</span> | 
-    <span data-lang="en">English</span>
-  </div>
-
-  <!-- Main heading -->
   <div class="main-title">
-    <h1 data-key="main-title">Iiro Kivistö</h1>
-    <h2 data-key="main-subtitle": "Contemporary visual artist working with ink, large-scale abstract paintings, and commissioned works."</h2>
+    <h1>Iiro Kivistö</h1>
+    <h2>Contemporary visual artist working with ink, large-scale abstract paintings, and commissioned works.</h2>
   </div>
 
-  <img src="assets/images/Taiteilijan_muotokuva_iiro_kivistö.jpg" alt="Muotokuva sivustolla esiintyvästä taiteilijasta, Iiro Kivistöstä" class="personal-photo">
+  <img src="assets/images/Taiteilijan_muotokuva_iiro_kivistö.jpg"
+       alt="Portrait of contemporary visual artist Iiro Kivistö"
+       class="personal-photo">
 
   <!-- About section -->
   <div id="about-text">
     <p>Loading...</p>
   </div>
 
-  <!-- Projects section -->
-  <div class="section-title" data-key="section-title">Työt</div>
+  <div class="section-title">Selected Works</div>
 
   <!-- Gallery images -->
-  <img src="assets/images/kaksi_taidemaalaus_tilaustyota_seinalla_olohuoneessa.jpg" alt="Kaksi abstraktia taidemaalausta, suurikokoisia, tilaustyönä tehty" class="gallery-image">
-  <img src="assets/images/kaksi_suurta_abstraktia_maalausta_olohuoneen_seinalla_tilaustyo.jpg" alt="Kaksi abstraktia taidemaalausta kuvattu talon toisesta kerroksesta suureen olohuoneeseen" class="gallery-image">
-  <img src="assets/images/abstrakti_tilaustyo_maalaus_raumalaiselle_asiakkaalle.jpg" alt="Suurikokoinen abstrakti maalaus" class="gallery-image">
-  <img src="assets/images/tilaustyo_taidemaalaus_abstrakti.jpg" alt="Suurikokoinen abstrakti maalaus tilaustyö" class="gallery-image">
-  <img src="assets/images/mustekynapiirustus_vuohi.jpg" alt="Mustekynäpiirustus vuohesta." class="gallery-image">
-  <img src="assets/images/mustekynapiirustus_koivu.jpg" alt="Mustekynäpiirustus tuulessa taipuvasta koivusta." class="gallery-image">
-  <img src="assets/images/mustekynapiirustus_kaatuneesta_puusta.jpg" alt="Mustekynäpiirustus kaatuneesta puusta, tilaustyö asiakkaalle." class="gallery-image">
-  <img src="assets/images/mustekynapiirustus_myrskyisesta_meresta.jpg" alt="Mustekynäpiirustus, joka esittää pauhaavaa merta." class="gallery-image">
-  <img src="assets/images/big_blossom.jpg" alt="Abstrakti maalaus psykedeelisestä kukasta, nimi: Big Blossom" class="gallery-image">
-  <img src="assets/images/small_blossom.jpg" alt="Abstrakti maalaus psykedeelisestä kukasta, nimi: Small Blossom" class="gallery-image">
-  <img src="assets/images/illusion_of_restriction_big.jpg" alt="Abstrakti maalaus psykedeelisestä ympyrämuodosta, nimi: Illusion of restriction" class="gallery-image">
-  <img src="assets/images/illusion_of_restriction_small.jpg" alt="Abstrakti maalaus psykedeelisestä ympyrämuodosta, nimi: Illusion of restriction 2" class="gallery-image">
-  <img src="assets/images/rect.jpg" alt="Abstrakti maalaus psykedeelisestä neliömuodosta, nimi: Restless" class="gallery-image">
-  <img src="assets/images/think.jpg" alt="Abstrakti maalaus psykedeelisestä tekstistä jossa lukee: Think" class="gallery-image">
-  <img src="assets/images/ortho_mandala.jpg" alt="Digitaalinen taideteos: Ortho Mandala" class="gallery-image">
-  <img src="assets/images/pondering.jpg" alt="Digitaalinen taideteos: Pondering" class="gallery-image">
+  <img src="assets/images/kaksi_taidemaalaus_tilaustyota_seinalla_olohuoneessa.jpg"
+       alt="Large-scale abstract paintings installed in a modern interior space"
+       class="gallery-image">
 
-  <p class="after-gallery" id="after-gallery">Ota yhteyttä vapaasti alla olevalla lomakkeella. :)</p>
+  <img src="assets/images/kaksi_suurta_abstraktia_maalausta_olohuoneen_seinalla_tilaustyo.jpg"
+       alt="Two large abstract paintings displayed in an architectural interior"
+       class="gallery-image">
 
-  <!-- Contact form -->
+  <img src="assets/images/abstrakti_tilaustyo_maalaus_raumalaiselle_asiakkaalle.jpg"
+       alt="Large-scale abstract commissioned painting"
+       class="gallery-image">
+
+  <img src="assets/images/tilaustyo_taidemaalaus_abstrakti.jpg"
+       alt="Abstract commissioned painting"
+       class="gallery-image">
+
+  <img src="assets/images/mustekynapiirustus_vuohi.jpg"
+       alt="Detailed ink drawing of a goat"
+       class="gallery-image">
+
+  <img src="assets/images/mustekynapiirustus_koivu.jpg"
+       alt="Ink drawing of a birch tree in motion"
+       class="gallery-image">
+
+  <img src="assets/images/mustekynapiirustus_kaatuneesta_puusta.jpg"
+       alt="Ink drawing of a fallen tree"
+       class="gallery-image">
+
+  <img src="assets/images/mustekynapiirustus_myrskyisesta_meresta.jpg"
+       alt="Ink drawing depicting a stormy sea"
+       class="gallery-image">
+
+  <img src="assets/images/big_blossom.jpg"
+       alt="Abstract painting titled Big Blossom"
+       class="gallery-image">
+
+  <img src="assets/images/small_blossom.jpg"
+       alt="Abstract painting titled Small Blossom"
+       class="gallery-image">
+
+  <img src="assets/images/illusion_of_restriction_big.jpg"
+       alt="Abstract circular composition titled Illusion of Restriction"
+       class="gallery-image">
+
+  <img src="assets/images/illusion_of_restriction_small.jpg"
+       alt="Abstract circular composition titled Illusion of Restriction II"
+       class="gallery-image">
+
+  <img src="assets/images/rect.jpg"
+       alt="Abstract geometric painting titled Restless"
+       class="gallery-image">
+
+  <img src="assets/images/think.jpg"
+       alt="Abstract typographic artwork titled Think"
+       class="gallery-image">
+
+  <img src="assets/images/ortho_mandala.jpg"
+       alt="Digital artwork titled Ortho Mandala"
+       class="gallery-image">
+
+  <img src="assets/images/pondering.jpg"
+       alt="Digital artwork titled Pondering"
+       class="gallery-image">
+
+  <p class="after-gallery">
+    For exhibitions, collaborations, or commissioned work, feel free to get in touch.
+  </p>
+
   <section class="contact-block">
-    <h2 class="section-title" data-key="contact-title">Yhteydenotto</h2>
+    <h2 class="section-title">Contact</h2>
     <form action="https://formspree.io/f/mbddlprg" method="POST">
-      <input type="text" name="name" data-placeholder="contact-name" placeholder="Nimi" required>
-      <input type="email" name="email" data-placeholder="contact-email" placeholder="Sähköposti" required>
-      <textarea name="message" rows="5" data-placeholder="contact-message" placeholder="Viesti" required></textarea>
-      <button type="submit" data-key="contact-submit">Lähetä</button>
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" rows="5" placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
     </form>
   </section>
 
@@ -257,72 +261,19 @@
     <p>© 2025 Iiro Kivistö</p>
   </footer>
 
+  <!-- Load about_en.txt -->
   <script>
-  const aboutEl = document.getElementById('about-text');
-  const afterGalleryEl = document.getElementById('after-gallery');
-  const languageButtons = document.querySelectorAll('.language-switch [data-lang]');
+    const aboutEl = document.getElementById('about-text');
 
-  const translations = {
-    fi: {
-      "main-title": "Iiro Kivistö",
-      "main-subtitle": "Sisustustaulut, mustekynäpiirrokset, maalaukset ja tilaustyöt.",
-      "section-title": "Työt",
-      "contact-title": "Yhteydenotto",
-      "contact-name": "Nimi",
-      "contact-email": "Sähköposti",
-      "contact-message": "Viesti",
-      "contact-submit": "Lähetä",
-      "after-gallery": "Ota yhteyttä vapaasti alla olevalla lomakkeella. :)"
-    },
-    en: {
-      "main-title": "Iiro Kivistö",
-      "main-subtitle": "Artist from Rauma, Finland – Interior artwork, Ink drawings, Paintings, and Commissions.",
-      "section-title": "Works",
-      "contact-title": "Contact",
-      "contact-name": "Name",
-      "contact-email": "Email",
-      "contact-message": "Message",
-      "contact-submit": "Send",
-      "after-gallery": "Feel free to contact me using the form below. :)"
-    }
-  };
-
-  let currentLang = localStorage.getItem('artist_lang') || 'fi';
-  loadLanguage(currentLang);
-
-  function loadLanguage(lang) {
-    // Load about text
-    const path = lang === 'en' ? 'about_en.txt' : 'about.txt';
-    fetch(path)
-      .then(resp => resp.text())
-      .then(txt => aboutEl.innerHTML = txt)
-      .catch(err => aboutEl.innerHTML = 'Error loading text.');
-
-    // Update headings and contact placeholders
-    Object.keys(translations[lang]).forEach(key => {
-      const el = document.querySelector(`[data-key="${key}"]`);
-      if(el) el.textContent = translations[lang][key];
-      const placeholderEl = document.querySelector(`[data-placeholder="${key}"]`);
-      if(placeholderEl) placeholderEl.placeholder = translations[lang][key];
-    });
-
-    // Update after gallery text
-    afterGalleryEl.textContent = translations[lang]['after-gallery'];
-
-    // Active button
-    languageButtons.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-lang') === lang));
-  }
-
-  languageButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.getAttribute('data-lang');
-      if(lang !== currentLang){
-        currentLang = lang;
-        localStorage.setItem('artist_lang', lang);
-        loadLanguage(lang);
-      }
-    });
-  });
+    fetch('about_en.txt')
+      .then(response => response.text())
+      .then(text => {
+        aboutEl.innerHTML = `<p>${text}</p>`;
+      })
+      .catch(() => {
+        aboutEl.innerHTML = "<p>Unable to load text.</p>";
+      });
   </script>
+
 </body>
 </html>
