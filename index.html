@@ -35,7 +35,7 @@
     }
 
     .site-logo {
-      max-width: 240px;
+      max-width: 120px;
       height: auto;
       margin-bottom: 16px;
     }
@@ -97,15 +97,26 @@
     }
 
     .artwork-caption {
-      font-size: clamp(11px, 1.4vw, 13px);
-      color: #aaa;
-      font-style: italic;
       text-align: center;
       margin: 4px 0 20px;
       max-width: 25%;
       width: 90%;
       min-width: 200px;
       line-height: 1.5;
+    }
+
+    .artwork-caption .artwork-title {
+      display: block;
+      font-size: clamp(12px, 1.6vw, 14px);
+      color: #aaa;
+      font-style: normal;
+    }
+
+    .artwork-caption .artwork-details {
+      display: block;
+      font-size: clamp(11px, 1.4vw, 13px);
+      color: #aaa;
+      font-style: italic;
     }
 
     @media (max-width: 600px) {
@@ -212,34 +223,34 @@
   <img src="assets/images/Illusion_of_restriction_3_v001.jpg"
        alt="Large-scale abstract commissioned painting"
        class="gallery-image">
-  <p class="artwork-caption">Illusion of Restriction 3<br>Acrylic on canvas — 55 × 55 in</p>
+  <p class="artwork-caption"><span class="artwork-title">Illusion of Restriction 3</span><span class="artwork-details">Acrylic on canvas — 55 × 55 in</span></p>
 
   <img src="assets/images/Illusion_of_restriction_4_v001.jpg"
        alt="Abstract painting created as a commissioned artwork"
        class="gallery-image">
-  <p class="artwork-caption">Illusion of Restriction 4<br>Acrylic on canvas — 55 × 55 in</p>
+  <p class="artwork-caption"><span class="artwork-title">Illusion of Restriction 4</span><span class="artwork-details">Acrylic on canvas — 55 × 55 in</span></p>
 
   <!-- Ink drawings -->
   <img src="assets/images/Cat_ink_drawing_framed_v001_weboptimize.jpg"
        alt="Detailed ink drawing of a cat named Pumpkin"
        class="gallery-image">
-  <p class="artwork-caption">Pumpkin<br>Ink on paper — 13.5 × 7.5 in</p>
+  <p class="artwork-caption"><span class="artwork-title">Pumpkin</span><span class="artwork-details">Ink on paper — 13.5 × 7.5 in</span></p>
 
   <img src="assets/images/Goat_ink_drawing.jpg"
        alt="Detailed ink drawing of a goat named Paolo"
        class="gallery-image">
-  <p class="artwork-caption">Paolo<br>Ink on paper — 10 × 13.5 in</p>
+  <p class="artwork-caption"><span class="artwork-title">Paolo</span><span class="artwork-details">Ink on paper — 10 × 13.5 in</span></p>
 
   <!-- Sculptures -->
   <img src="assets/images/Hare_chainsaw_sculpture_composite_image_v001.jpg"
        alt="Chainsaw carved pine sculpture of a hare"
        class="gallery-image">
-  <p class="artwork-caption">Hare<br>Chainsaw carved pine — 22 in height</p>
+  <p class="artwork-caption"><span class="artwork-title">Hare</span><span class="artwork-details">Chainsaw carved pine — 22 in height</span></p>
 
   <img src="assets/images/Squirrel_chainsaw_sculpture_composite_image_v003.jpg"
        alt="Chainsaw carved pine sculpture of a squirrel"
        class="gallery-image">
-  <p class="artwork-caption">Squirrel<br>Chainsaw carved pine — 29 in height</p>
+  <p class="artwork-caption"><span class="artwork-title">Squirrel</span><span class="artwork-details">Chainsaw carved pine — 29 in height</span></p>
 
   <p class="after-gallery">
     For exhibitions, collaborations, or commissioned work, feel free to get in touch.
