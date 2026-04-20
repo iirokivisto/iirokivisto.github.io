@@ -90,12 +90,25 @@
       margin-top: 60px;
     }
 
+    .artwork-caption {
+      font-size: clamp(11px, 1.4vw, 13px);
+      color: #aaa;
+      font-style: italic;
+      text-align: center;
+      margin: 4px 0 20px;
+      max-width: 25%;
+      width: 90%;
+      min-width: 200px;
+      line-height: 1.5;
+    }
+
     @media (max-width: 600px) {
       .personal-photo {
         max-width: 60%;
       }
       .gallery-image,
-      p {
+      p,
+      .artwork-caption {
         max-width: 80%;
       }
     }
@@ -173,7 +186,9 @@
 
   <!-- About section -->
   <div id="about-text">
-    <p>Loading...</p>
+    <p>The best pieces in a room are the ones you still stop to look at after years on the wall. Art crafted by hand holds the energy of its maker — and through that, it can create a feeling of connection that draws you back, time and time again.</p>
+    <p>Some of these works were created on commission, while others are driven by my own ideas and artistic exploration.</p>
+    <p>I produce a wide range of commissioned work, including abstract paintings, figurative ink drawings, sculptures, and carpentry-based pieces such as design furniture. I also build the frames for my paintings myself.</p>
   </div>
 
   <div class="section-title">Selected Works</div>
@@ -185,32 +200,40 @@
   <img src="assets/images/two_large_abstract_commissioned_artworks_from_above.jpg"
        alt="Two large abstract paintings displayed in an architectural interior"
        class="gallery-image">
-  
+
   <!-- Paintings -->
   <img src="assets/images/Illusion_of_restriction_3_v001.jpg"
        alt="Large-scale abstract commissioned painting"
        class="gallery-image">
+  <p class="artwork-caption">Illusion of Restriction 3<br>Acrylic on canvas — 55 × 55 in</p>
+
   <img src="assets/images/Illusion_of_restriction_4_v001.jpg"
        alt="Abstract painting created as a commissioned artwork"
        class="gallery-image">
-  
+  <p class="artwork-caption">Illusion of Restriction 4<br>Acrylic on canvas — 55 × 55 in</p>
+
   <!-- Ink drawings -->
-  <img src="assets/images/Goat_ink_drawing.jpg"
-       alt="Detailed ink drawing of a goat"
-       class="gallery-image">
   <img src="assets/images/Cat_ink_drawing_framed_v001_weboptimize.jpg"
-       alt="Detailed ink drawing of a cat"
+       alt="Detailed ink drawing of a cat named Pumpkin"
        class="gallery-image">
-  
+  <p class="artwork-caption">Pumpkin<br>Ink on paper — 13.5 × 7.5 in</p>
+
+  <img src="assets/images/Goat_ink_drawing.jpg"
+       alt="Detailed ink drawing of a goat named Paolo"
+       class="gallery-image">
+  <p class="artwork-caption">Paolo<br>Ink on paper — 10 × 13.5 in</p>
+
   <!-- Sculptures -->
   <img src="assets/images/Hare_chainsaw_sculpture_composite_image_v001.jpg"
-       alt="Chainsaw sculpture of a hare"
+       alt="Chainsaw carved pine sculpture of a hare"
        class="gallery-image">
-  <img src="assets/images/Squirrel_chainsaw_sculpture_composite_image_v001.jpg"
-       alt="Chainsaw sculpture of a squirrel"
-       class="gallery-image">
+  <p class="artwork-caption">Hare<br>Chainsaw carved pine — 22 in height</p>
 
-  
+  <img src="assets/images/Squirrel_chainsaw_sculpture_composite_image_v001.jpg"
+       alt="Chainsaw carved pine sculpture of a squirrel"
+       class="gallery-image">
+  <p class="artwork-caption">Squirrel<br>Chainsaw carved pine — 29 in height</p>
+
   <p class="after-gallery">
     For exhibitions, collaborations, or commissioned work, feel free to get in touch.
   </p>
@@ -228,20 +251,6 @@
   <footer class="site-footer">
     <p>© 2026 Iiro Kivistö</p>
   </footer>
-
-  <!-- Load about_en.txt -->
-  <script>
-    const aboutEl = document.getElementById('about-text');
-
-    fetch('about_en.txt')
-      .then(response => response.text())
-      .then(text => {
-        aboutEl.innerHTML = `<p>${text}</p>`;
-      })
-      .catch(() => {
-        aboutEl.innerHTML = "<p>Unable to load about text. Please try again later.</p>";
-      });
-  </script>
 
 </body>
 </html>
