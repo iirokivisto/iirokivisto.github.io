@@ -7,12 +7,12 @@
   <title>Iiro Kivistö | Contemporary Artist</title>
 
   <!-- SEO meta tags -->
-  <meta name="description" content="Contemporary Finnish visual artist Iiro Kivistö. Large-scale abstract paintings, figurative ink drawings, sculptures, and commissioned works. Portfolio and contact information.">
+  <meta name="description" content="Contemporary Finnish visual artist Iiro Kivistö. Abstract paintings, figurative ink drawings, sculptures, and commissioned works. Portfolio and contact information.">
   <meta name="author" content="Iiro Kivistö">
 
   <!-- Open Graph / Social sharing -->
   <meta property="og:title" content="Iiro Kivistö">
-  <meta property="og:description" content="Contemporary visual artist working with ink, large-scale abstract paintings, and commissioned works.">
+  <meta property="og:description" content="Contemporary visual artist working with ink, abstract paintings, and commissioned works.">
   <meta property="og:image" content="https://iirokivisto.com/assets/images/artist_logo.png">
   <meta property="og:url" content="https://iirokivisto.com">
   <meta property="og:type" content="website">
@@ -33,6 +33,42 @@
       font-family: "gravita-geo-variable", sans-serif;
       color: #222222;
     }
+
+    /* ── Language switcher ── */
+    .language-switch {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .language-switch button {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: #bbb;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .language-switch button:hover {
+      color: #555;
+    }
+
+    .language-switch button.active {
+      color: #222;
+      font-variation-settings: 'wght' 500;
+    }
+
+    .language-switch .divider {
+      color: #ddd;
+      font-size: 12px;
+      user-select: none;
+    }
+    /* ── end language switcher ── */
 
     .site-logo {
       max-width: 240px;
@@ -197,10 +233,17 @@
 
 <body>
 
+  <!-- Language switcher -->
+  <div class="language-switch">
+    <button data-lang="en" class="active" onclick="setLang('en')">English</button>
+    <span class="divider">|</span>
+    <button data-lang="fi" onclick="setLang('fi')">Suomeksi</button>
+  </div>
+
   <div class="main-title">
     <img src="assets/images/artist_logo.png" alt="Artist Iiro Kivistö logo" class="site-logo">
     <h1>Iiro Kivistö</h1>
-    <h2>Contemporary visual artist working with ink, large-scale abstract paintings, and commissioned works. Based in Rauma, Finland</h2>
+    <h2 data-key="tagline">Contemporary visual artist working with ink, abstract paintings, and commissioned works. Based in Rauma, Finland</h2>
   </div>
 
   <img src="assets/images/artist_portrait_iiro_kivistö.jpg"
@@ -209,12 +252,12 @@
 
   <!-- About section -->
   <div id="about-text">
-    <p>The best pieces in a room are the ones you still stop to look at after years on the wall. Art crafted by hand holds the energy of its maker — and through that, it can create a feeling of connection that draws you back, time and time again.</p>
-    <p>Some of these works were created on commission, while others are driven by my own ideas and artistic exploration.</p>
-    <p>I produce a wide range of commissioned work, including abstract paintings, figurative ink drawings, sculptures, and carpentry-based pieces such as design furniture. I also build the frames for my paintings myself.</p>
+    <p data-key="about1">The best pieces in a room are the ones you still stop to look at after years on the wall. Art crafted by hand holds the energy of its maker — and through that, it can create a feeling of connection that draws you back, time and time again.</p>
+    <p data-key="about2">Some of these works were created on commission, while others are driven by my own ideas and artistic exploration.</p>
+    <p data-key="about3">I produce a wide range of commissioned work, including abstract paintings, figurative ink drawings, sculptures, and carpentry-based pieces such as design furniture. I also build the frames for my paintings myself.</p>
   </div>
 
-  <div class="section-title">Selected Works</div>
+  <div class="section-title" data-key="selected-works">Selected Works</div>
 
   <!-- Commission in context -->
   <img src="assets/images/two_large_abstract_commissioned_artworks_front_view.jpg"
@@ -257,23 +300,87 @@
        class="gallery-image">
   <p class="artwork-caption"><span class="artwork-title">Squirrel</span><span class="artwork-details">Chainsaw carved pine — 29 in height</span></p>
 
-  <p class="after-gallery">
+  <p class="after-gallery" data-key="cta">
     For exhibitions, collaborations, or commissioned work, feel free to get in touch.
   </p>
 
   <section class="contact-block">
-    <h2 class="section-title">Contact</h2>
+    <h2 class="section-title" data-key="contact-title">Contact</h2>
     <form action="https://formspree.io/f/mbddlprg" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Message" required></textarea>
-      <button type="submit">Send</button>
+      <input type="text" name="name" data-placeholder="contact-name" placeholder="Your Name" required>
+      <input type="email" name="email" data-placeholder="contact-email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" data-placeholder="contact-message" placeholder="Message" required></textarea>
+      <button type="submit" data-key="contact-submit">Send</button>
     </form>
   </section>
 
   <footer class="site-footer">
     <p>© 2026 Iiro Kivistö</p>
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        "tagline":          "Contemporary visual artist working with ink, abstract paintings, and commissioned works. Based in Rauma, Finland",
+        "about1":           "The best pieces in a room are the ones you still stop to look at after years on the wall. Art crafted by hand holds the energy of its maker — and through that, it can create a feeling of connection that draws you back, time and time again.",
+        "about2":           "Some of these works were created on commission, while others are driven by my own ideas and artistic exploration.",
+        "about3":           "I produce a wide range of commissioned work, including abstract paintings, figurative ink drawings, sculptures, and carpentry-based pieces such as design furniture. I also build the frames for my paintings myself.",
+        "selected-works":   "Selected Works",
+        "cta":              "For exhibitions, collaborations, or commissioned work, feel free to get in touch.",
+        "contact-title":    "Contact",
+        "contact-name":     "Your Name",
+        "contact-email":    "Your Email",
+        "contact-message":  "Message",
+        "contact-submit":   "Send"
+      },
+      fi: {
+        "tagline":          "Nykytaiteen visuaalinen taiteilija, joka työskentelee mustekynäpiirustusten, veistosten, abstraktien maalausten ja tilausteoksien parissa. Kotipaikka Rauma, Suomi",
+        "about1":           "Parhaat teokset huoneessa ovat niitä, joiden äärelle pysähdyt yhä uudelleen vuosienkin jälkeen. Käsin tehty taide kantaa tekijänsä energiaa — ja sitä kautta se voi luoda yhteyden tunteen, joka vetää puoleensa kerta toisensa jälkeen.",
+        "about2":           "Osa näistä teoksista on syntynyt tilauksesta, osa omista ideoistani ja taiteellisesta inspiraatiosta.",
+        "about3":           "Teen monenlaisia tilausteoksia: abstrakteja maalauksia, mustepiirroksia, veistoksia sekä puusepäntyönä valmistettuja designhuonekaluja. Rakennan myös maalauksiini kehykset itse.",
+        "selected-works":   "Valittuja teoksia",
+        "cta":              "Näyttelyihin, yhteistöihin tai tilausteoksiin liittyen — ota rohkeasti yhteyttä.",
+        "contact-title":    "Yhteystiedot",
+        "contact-name":     "Nimesi",
+        "contact-email":    "Sähköpostisi",
+        "contact-message":  "Viesti",
+        "contact-submit":   "Lähetä"
+      }
+    };
+
+    function setLang(lang) {
+      const dict = translations[lang];
+
+      // Text content
+      document.querySelectorAll('[data-key]').forEach(el => {
+        if (dict[el.dataset.key] !== undefined) {
+          el.textContent = dict[el.dataset.key];
+        }
+      });
+
+      // Placeholders
+      document.querySelectorAll('[data-placeholder]').forEach(el => {
+        if (dict[el.dataset.placeholder] !== undefined) {
+          el.placeholder = dict[el.dataset.placeholder];
+        }
+      });
+
+      // Active button state
+      document.querySelectorAll('.language-switch button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      // Update html lang attribute
+      document.documentElement.lang = lang;
+
+      // Persist choice
+      localStorage.setItem('lang', lang);
+    }
+
+    // Restore saved language on load
+    const saved = localStorage.getItem('lang');
+    if (saved && saved !== 'en') setLang(saved);
+  </script>
 
 </body>
 </html>
